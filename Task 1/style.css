@@ -1,0 +1,107 @@
+/* Global styles */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    font-size: 18px;
+}
+
+/* Navigation bar */
+nav {
+    background-color: #1f2937;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: #ffffff;
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0 18px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #38bdf8;
+    text-decoration: underline;
+}
+
+/* Main page container (NO outer box) */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    color: #1f2937;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: #2563eb;
+    margin-top: 30px;
+}
+
+/* Paragraphs */
+p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* Home page details box */
+.details-box {
+    background-color: #eef6ff;
+    padding: 20px 25px;
+    margin-top: 20px;
+    border-left: 5px solid #1d4ed8;
+    border-radius: 8px;
+}
+/* Reusable section box (Home, About, Index) */
+.section-box {
+    background-color: #f0f9ff;
+    padding: 25px;
+    border-left: 6px solid #2563eb;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Contact text */
+.contact-section p {
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+/* Links */
+.contact-section a {
+    text-decoration: none;
+}
+
+/* Icons */
+.icon {
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+/* Icon hover effect */
+.contact-section a:hover img {
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+}
+
+/* Email text */
+.email-text {
+    color: #1d4ed8;
+    font-weight: 600;
+}
+
+/* Horizontal rule */
+hr {
+    border: none;
+    height: 1px;
+    background-color: #e5e7eb;
+    margin-top: 30px;
+}
