@@ -11,21 +11,20 @@ h1 {
 }
 .timetable {
     width: 100%;
-    border-collapse: separate;   /* required for rounded corners */
+    border-collapse: separate;  
     border-spacing: 0;
     font-size: 14px;
     background-color: #ffffff;
 
-    border-radius: 14px;         /* slightly more curve */
+    border-radius: 14px;         
     overflow: hidden;
 
-    /* STRONG outer border */
-    border: 1px solid #475569;   /* darker & thicker */
+    border: 1px solid #475569;  
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 .timetable th,
 .timetable td {
-    border: 1px solid #94a3b8;   /* lighter than outer border */
+    border: 1px solid #94a3b8;   
     padding: 12px;
     text-align: center;
 }
