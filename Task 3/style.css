@@ -1,0 +1,88 @@
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #f8fafc, #eef2ff);
+    padding: 40px;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #1f2937;
+    letter-spacing: 1px;
+}
+.timetable {
+    width: 100%;
+    border-collapse: separate;   /* required for rounded corners */
+    border-spacing: 0;
+    font-size: 14px;
+    background-color: #ffffff;
+
+    border-radius: 14px;         /* slightly more curve */
+    overflow: hidden;
+
+    /* STRONG outer border */
+    border: 1px solid #475569;   /* darker & thicker */
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+.timetable th,
+.timetable td {
+    border: 1px solid #94a3b8;   /* lighter than outer border */
+    padding: 12px;
+    text-align: center;
+}
+
+.timetable th {
+    background-color: #e0e7ff;
+    font-weight: bold;
+    color: #1e3a8a;
+}
+.timetable th:first-child {
+    background-color: #c7d2fe;
+    color: #1e293b;
+}
+.lunch {
+    background-color: #fde68a;
+    font-weight: bold;
+}
+.free {
+    background-color: #dcfce7;
+    color: #065f46;
+    font-weight: bold;
+}
+.timetable td:hover {
+    box-shadow: inset 0 0 0 2px #94a3b8;
+    transition: box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+
+
+.wp {
+    background-color: #dbeafe;   
+    color: #1e3a8a;
+}
+.daa {
+    background-color: #ede9fe;  
+    color: #4c1d95;
+}
+.cao {
+    background-color: #fee2e2;  
+    color: #7f1d1d;
+}
+.toc {
+    background-color: #edfbad;   
+    color: #155e75;
+}
+
+
+.mpmc {
+    background-color: #ffedd5;   
+    color: #7c2d12;
+}
+.bmat {
+    background-color: #fae8ff;   
+    color: #701a75;
+}
+.bsts {
+    background-color: #b1f7fb;  
+    color: #098379;
+}
