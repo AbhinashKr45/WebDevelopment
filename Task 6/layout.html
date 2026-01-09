@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Modern Div Layout</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(120deg, #667eea, #764ba2);
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(0,0,0,0.7);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    color: #ffd369;
+}
+
+/* Content */
+.content {
+    background: white;
+    margin: 60px auto;
+    width: 80%;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.content h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.content p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    background: rgba(0,0,0,0.8);
+    color: white;
+    text-align: center;
+    padding: 12px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">MyWebsite</div>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Courses</a>
+        <a href="#">Contact</a>
+    </div>
+</div>
+
+<div class="content">
+    <h1>Welcome to My Website</h1>
+    <p>
+        This modern layout is created using only the <strong>&lt;div&gt;</strong> element and CSS.
+        It demonstrates structured layout, styling, spacing, and responsiveness.
+    </p>
+</div>
+
+<div class="footer">
+    © 2026 | Designed using DIV & CSS
+</div>
+
+</body>
+</html>
