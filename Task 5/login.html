@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login-container">
+
+    <div class="login-image">
+        <img src="user.png" alt="User">
+        <h3>Welcome Back</h3>
+    </div>
+
+    <div class="login-form">
+        <h2>Login</h2>
+
+        <form action="dashboard.html">
+            <input type="email" placeholder="Email" required>
+
+            <div class="password-box">
+                <input type="password" id="password" placeholder="Password" required>
+                <span onclick="togglePassword()"></span>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+</div>
+
+<script>
+function togglePassword() {
+    const pass = document.getElementById("password");
+    pass.type = pass.type === "password" ? "text" : "password";
+}
+</script>
+
+</body>
+</html>
