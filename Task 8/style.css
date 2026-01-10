@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* 🌈 BODY BACKGROUND (SOFT, NOT OVERPOWERING) */
+body {
+    text-align: center;
+    background: linear-gradient(135deg, #eef2ff, #fdfbff);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* ================= HEADER (VISIBLE & DISTINCT) ================= */
+header {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    padding: 40px;
+    color: white;
+}
+
+header h1 {
+    opacity: 0;
+    animation: headerAnim 1.5s ease forwards;
+}
+
+@keyframes headerAnim {
+    from {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ================= IMAGE SECTION ================= */
+.image-section img {
+    width: 300px;
+    border-radius: 12px;
+    transition: transform 0.6s ease-out;
+}
+
+/* Smooth oscillating rotation on hover */
+.image-section img:hover {
+    animation: gentleRotate 1.8s ease-in-out infinite;
+}
+
+/* Keyframes for smooth back-and-forth motion */
+@keyframes gentleRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+
+/* ================= TEXT SECTION ================= */
+.text-section {
+    width: 80%;
+    margin: 50px auto;
+    font-size: 18px;
+}
+
+.typing span {
+    opacity: 0;
+    display: inline-block;
+    animation: typingAnim 0.3s linear forwards;
+    animation-delay: calc(var(--d) * 0.08s);
+}
+
+@keyframes typingAnim {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ================= BUTTON SECTION ================= */
+.button-section {
+    margin: 60px 0;
+}
+
+/* ✨ ATTRACTIVE BUTTON */
+.fancy-btn {
+    padding: 16px 46px;
+    font-size: 17px;
+    border: none;
+    border-radius: 50px;
+
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    cursor: pointer;
+
+    transition:
+        transform 0.4s ease-in-out,
+        background 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.fancy-btn:hover {
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+    transform: scale(1.25);
+    box-shadow: 0 15px 35px rgba(221,36,118,0.5);
+}
