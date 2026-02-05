@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Grade Calculator</title>
+
+<style>
+html,body {
+    height:100%;
+    margin: 0;
+    font-family: Segoe UI, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.container {
+    width: 350px;
+    margin: 80px auto;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4f46e5;
+}
+
+input {
+    width: 100%;
+    padding: 9px;
+    margin: 7px 0;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+}
+
+input:focus {
+    outline: none;
+    border-color: #6366f1;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.result {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #111827;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Grade Calculator</h2>
+
+    <input type="number" id="s1" placeholder="Subject 1" min="0" max="100">
+    <input type="number" id="s2" placeholder="Subject 2" min="0" max="100">
+    <input type="number" id="s3" placeholder="Subject 3" min="0" max="100">
+    <input type="number" id="s4" placeholder="Subject 4" min="0" max="100">
+    <input type="number" id="s5" placeholder="Subject 5" min="0" max="100">
+
+    <button onclick="calculateGrade()">Calculate</button>
+
+    <div class="result" id="output"></div>
+</div>
+
+<script>
+function calculateGrade() {
+    let s1 = Number(document.getElementById("s1").value);
+    let s2 = Number(document.getElementById("s2").value);
+    let s3 = Number(document.getElementById("s3").value);
+    let s4 = Number(document.getElementById("s4").value);
+    let s5 = Number(document.getElementById("s5").value);
+
+    let average = (s1 + s2 + s3 + s4 + s5) / 5;
+    let grade;
+
+    if (average >= 90 && average <= 100) {
+        grade = "A";
+    } else if (average >= 80 && average < 90) {
+        grade = "B";
+    } else if (average >= 70 && average < 80) {
+        grade = "C";
+    } else if (average >= 60 && average < 70) {
+        grade = "D";
+    } else {
+        grade = "F";
+    }
+
+    document.getElementById("output").innerHTML =
+        "Average Marks: " + average.toFixed(2) + "<br>" +
+        "Grade: " + grade;
+}
+</script>
+
+</body>
+</html>
