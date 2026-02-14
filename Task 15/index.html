@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gen Z Slang Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Gen Z Slang Detector</h2>
+    
+    <input type="text" id="message" placeholder="Type your message here">
+    <br><br>
+    <button onclick="checkSlang()">Check</button>
+    
+    <div id="result"></div>
+
+    <script>
+        // Slang dictionary
+        const slangDictionary = {
+            "idk": "I don't know",
+            "brb": "Be right back",
+            "tbh": "To be honest",
+            "imo": "In my opinion",
+            "smh": "Shaking my head",
+            "lol": "Laughing out loud",
+            "lmao": "Laughing my ass off",
+            "fr": "For real",
+            "ong": "On God",
+            "rn": "Right now",
+            "btw": "By the way"
+        };
+
+        // ONE single regular expression (case-insensitive)
+        const slangRegex = /\b(idk|brb|tbh|imo|smh|lol|lmao|fr|ong|rn|btw)\b/i;
+
+        function checkSlang() {
+            const message = document.getElementById("message").value;
+            const match = message.match(slangRegex);
+
+            if (match) {
+                const foundWord = match[0].toLowerCase();
+                document.getElementById("result").textContent = slangDictionary[foundWord];
+            } else {
+                document.getElementById("result").textContent = "It's not a Gen Z word.";
+            }
+        }
+    </script>
+
+</body>
+</html>
