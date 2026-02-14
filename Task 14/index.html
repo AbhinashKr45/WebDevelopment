@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regular Expression Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background-color: #f2f2f2;
+        }
+        input {
+            display: block;
+            margin-bottom: 15px;
+            padding: 8px;
+            width: 300px;
+        }
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<h2>User Input Validation Using Regular Expressions</h2>
+
+<input type="text" id="fullName" placeholder="Enter Full Name">
+<input type="text" id="email" placeholder="Enter VIT Student Email">
+<input type="text" id="username" placeholder="Enter Username">
+<input type="text" id="hexColor" placeholder="Enter Hex Color Code">
+
+<button onclick="validateInputs()">Validate</button>
+
+<div id="result"></div>
+
+<script>
+function validateInputs() {
+
+    const fullName = document.getElementById("fullName").value;
+    const email = document.getElementById("email").value;
+    const username = document.getElementById("username").value;
+    const hexColor = document.getElementById("hexColor").value;
+
+    // Regular Expressions
+    const fullNameRegex = /^[A-Z][a-z]+( [A-Z][a-z]+){1,2}$/;
+    const emailRegex = /^[a-z]+\.(?:[a-z]+)?\d{4}@vitstudent\.ac\.in$/;
+    const usernameRegex = /^[A-Za-z][A-Za-z0-9_]{4,14}$/;
+    const hexColorRegex = /^#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$/;
+
+    let errors = [];
+
+    if (!fullNameRegex.test(fullName)) {
+        errors.push("Full Name is invalid. It must contain 2 to 3 words starting with capital letters.");
+    }
+
+    if (!emailRegex.test(email)) {
+        errors.push("Email is invalid. It must follow the format name.year@vitstudent.ac.in.");
+    }
+
+    if (!usernameRegex.test(username)) {
+        errors.push("Username is invalid. It must start with a letter, be 5 to 15 characters long, and contain only letters, numbers, or underscores.");
+    }
+
+    if (!hexColorRegex.test(hexColor)) {
+        errors.push("Hex Color Code is invalid. It must be in the format #FFF or #ffffff.");
+    }
+
+    const resultDiv = document.getElementById("result");
+
+    if (errors.length === 0) {
+        resultDiv.innerHTML = "All validations passed successfully.";
+        resultDiv.className = "success";
+    } else {
+        resultDiv.innerHTML = errors.join("<br>");
+        resultDiv.className = "error";
+    }
+}
+</script>
+
+</body>
+</html>
