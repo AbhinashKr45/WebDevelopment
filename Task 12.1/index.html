@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Events Demonstration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+        }
+        button {
+            margin: 10px 0;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+        input {
+            padding: 8px;
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="mainHeading"
+        onmouseover="changeColor()"
+        onmouseout="resetColor()">
+        Hover Over This Heading
+    </h1>
+
+    <p id="textPara">This is the original paragraph text.</p>
+
+    <button onclick="changeText()">Change Paragraph Text</button>
+
+    <br><br>
+
+    <input type="text" id="liveInput" onkeyup="displayText()" 
+           placeholder="Type something here">
+
+    <p>Live Output: <span id="output"></span></p>
+
+    <button onclick="confirmChange()">Change Background (Confirm)</button>
+
+    <br>
+
+    <button onclick="showAlert()">Show Alert</button>
+
+<script>
+
+    // 1. Change paragraph text (onclick)
+    function changeText() {
+        document.getElementById("textPara").innerHTML =
+            "The paragraph text has been changed using onclick event.";
+    }
+
+    // 2. Change heading color on hover
+    function changeColor() {
+        document.getElementById("mainHeading").style.color = "blue";
+    }
+
+    function resetColor() {
+        document.getElementById("mainHeading").style.color = "black";
+    }
+
+    // 3. Display typed text in real time (onkeyup)
+    function displayText() {
+        var inputValue = document.getElementById("liveInput").value;
+        document.getElementById("output").innerHTML = inputValue;
+    }
+
+    // 4. Confirm dialog and change background color
+    function confirmChange() {
+        var result = confirm("Do you want to change the background color?");
+        if (result) {
+            document.body.style.backgroundColor = "lightyellow";
+        }
+    }
+
+    // 5. Show alert message
+    function showAlert() {
+        alert("This is a custom alert message triggered by a button click.");
+    }
+
+</script>
+
+</body>
+</html>
