@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Slider</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 40px;
+            background-color: #f4f4f4;
+        }
+
+        .slider-container {
+            width: 500px;
+            margin: auto;
+        }
+
+        img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        button {
+            margin: 15px;
+            padding: 8px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Simple Image Slider</h2>
+
+    <div class="slider-container">
+        <img id="sliderImage" src="https://picsum.photos/id/1015/500/300">
+    </div>
+
+    <button onclick="previousImage()">Previous</button>
+    <button onclick="nextImage()">Next</button>
+
+<script>
+
+    // Array of image URLs
+    const images = [
+        "https://picsum.photos/id/1015/500/300",
+        "https://picsum.photos/id/1025/500/300",
+        "https://picsum.photos/id/1035/500/300",
+        "https://picsum.photos/id/1045/500/300"
+    ];
+
+    let currentIndex = 0;
+
+    function showImage() {
+        document.getElementById("sliderImage").src = images[currentIndex];
+    }
+
+    function nextImage() {
+        currentIndex++;
+
+        // If last image, go back to first
+        if (currentIndex >= images.length) {
+            currentIndex = 0;
+        }
+
+        showImage();
+    }
+
+    function previousImage() {
+        currentIndex--;
+
+        // If first image, go to last
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1;
+        }
+
+        showImage();
+    }
+
+</script>
+
+</body>
+</html>
